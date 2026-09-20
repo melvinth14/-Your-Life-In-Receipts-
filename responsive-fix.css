@@ -1,0 +1,131 @@
+ .skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 16px;
+  z-index: 10;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 11px var(--sans);
+}
+
+.skip-link:focus {
+  left: 16px;
+}
+
+/* Signature polish: make the data feel collected, not tabular. */
+h1,
+.section-heading h2 {
+  text-wrap: balance;
+}
+
+.intro-copy {
+  position: relative;
+}
+
+.intro-copy::before {
+  content: "01 / 04";
+  position: absolute;
+  top: -34px;
+  right: 16%;
+  color: var(--teal);
+  font: 10px var(--mono);
+  letter-spacing: .12em;
+}
+
+.button-dark {
+  box-shadow: 5px 5px 0 var(--coral);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.button-dark:hover,
+.button-dark:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--teal);
+}
+
+.receipt {
+  position: relative;
+  transition: background .2s ease, padding-left .2s ease;
+}
+
+.receipt::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--coral);
+  transform: scaleY(0);
+  transition: transform .2s ease;
+}
+
+.receipt:hover,
+.receipt:focus-visible,
+.receipt.selected {
+  padding-left: 14px;
+  outline: none;
+}
+
+.receipt:hover::before,
+.receipt:focus-visible::before,
+.receipt.selected::before {
+  transform: scaleY(1);
+}
+
+.thread-panel {
+  box-shadow: 9px 9px 0 var(--coral);
+}
+
+.thread-panel::before {
+  content: "THREAD / 01";
+  position: absolute;
+  right: 28px;
+  top: 29px;
+  color: rgba(244, 240, 232, .38);
+  font: 9px var(--mono);
+  letter-spacing: .12em;
+}
+
+.chapter {
+  transition: background .2s ease, padding-left .2s ease;
+}
+
+.chapter:hover {
+  background: rgba(55, 139, 131, .08);
+  padding-left: 12px;
+}
+
+@media (max-width: 800px) {
+  .intro-copy::before {
+    right: 0;
+  }
+
+  .thread-panel {
+    box-shadow: 6px 6px 0 var(--coral);
+  }
+}
+
+@media (max-width: 800px) {
+  .archive-layout,
+  .receipt-list {
+    min-width: 0;
+  }
+
+  .receipt {
+    grid-template-columns: 85px 29px minmax(0, 1fr);
+    min-width: 0;
+  }
+
+  .thread-panel {
+    display: block;
+    min-height: 310px;
+  }
+}
+
+@media (max-width: 420px) {
+  .receipt {
+    grid-template-columns: 70px 29px minmax(0, 1fr);
+  }
+}

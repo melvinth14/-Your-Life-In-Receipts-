@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receipt Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive-fix.css">
+</head>
+<body>
+  <a class="skip-link" href="#explore">Skip to the archive</a>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top"><span class="brand-mark">RR</span><span>Receipt Room</span></a>
+      <div class="topbar-meta"><span class="status-dot"></span><span id="dataStatus">loading your archive</span><span class="divider"></span><span>private collection / 2013-2024</span></div>
+    </header>
+
+    <main id="top">
+      <section class="intro">
+        <div class="intro-copy">
+          <p class="kicker">A life, in fragments</p>
+          <h1>The things you did<br><em>when nobody was watching.</em></h1>
+          <p class="lede">A collection of tiny digital traces. Follow the threads between what you listened to, where you went, and what you chose to spend on.</p>
+          <div class="intro-actions"><a class="button button-dark" href="#explore">Explore the archive <span>↓</span></a><button class="text-button" id="surpriseButton">Show me a pattern <span>↗</span></button></div>
+        </div>
+        <div class="orbit" aria-hidden="true"><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><div class="orbit-center"><strong id="heroCount">—</strong><span>receipts<br>connected</span></div><span class="orbit-note note-a">2:04 AM<br><b>repeat ritual</b></span><span class="orbit-note note-b">09 / 18<br><b>a full day</b></span><span class="orbit-note note-c">∞<br><b>small clues</b></span></div>
+      </section>
+
+      <section class="insight-strip" id="insights" aria-label="Archive insights">
+        <article class="insight lead-insight"><span class="eyebrow">The first read</span><h2 id="storyTitle">A quiet archive, with a pulse.</h2><p id="storyCopy">Your receipts are still unfolding. Load the archive to see what keeps returning.</p><button class="arrow-button" id="storyButton" aria-label="Next insight">→</button></article>
+        <article class="metric"><span class="metric-label">Most present</span><strong id="topCategory">—</strong><span id="topCategoryCount">waiting for a signal</span></article>
+        <article class="metric"><span class="metric-label">After dark</span><strong id="nightCount">—</strong><span>receipts after 8 PM</span></article>
+        <article class="metric"><span class="metric-label">Favourite place</span><strong id="topPlace">—</strong><span>most repeated location</span></article>
+      </section>
+
+      <section class="explore" id="explore">
+        <div class="section-heading"><div><p class="kicker">The archive</p><h2>Find the thread.</h2></div><p class="section-note">Search across the moments, then change the lens. Every result is a clue in a larger story.</p></div>
+        <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search a song, place, merchant..." aria-label="Search receipts"></label><div class="filter-group" id="filterGroup"><button class="filter active" data-filter="all">All <b id="allCount">0</b></button><button class="filter" data-filter="music">Music</button><button class="filter" data-filter="money">Money</button><button class="filter" data-filter="places">Places</button></div><select id="sortSelect" aria-label="Sort receipts"><option value="new">Newest first</option><option value="old">Oldest first</option></select></div>
+        <div class="archive-layout"><div class="receipt-list" id="receiptList" aria-live="polite"></div><aside class="thread-panel" aria-live="polite"><div class="panel-top"><span class="eyebrow">One possible story</span><button id="closeThread" class="close-button" aria-label="Close thread">×</button></div><h3 id="threadTitle">The late-night<br><em>blue hour.</em></h3><p id="threadCopy">Some patterns only show up when the day has gone quiet.</p><div class="thread-line" id="threadLine"></div><div class="thread-foot"><span id="threadMeta">Select a receipt to follow its thread.</span><button class="circle-button" id="threadButton" aria-label="Follow thread">↗</button></div></aside></div>
+        <div class="empty-state" id="emptyState">No receipt matches that search. Try a broader word.</div>
+      </section>
+
+      <section class="chapters"><div class="section-heading"><div><p class="kicker">Zooming out</p><h2>Chapters, not a timeline.</h2></div><p class="section-note">The archive becomes more human when moments are read in company. These chapters are built from recurring categories, places, and time of day.</p></div><div class="chapter-grid" id="chapterGrid"></div></section>
+    </main>
+    <footer><span>RECEIPT ROOM / A DIGITAL LIFE STUDY</span><span>Nothing here is random. Some things are just waiting to be connected.</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
