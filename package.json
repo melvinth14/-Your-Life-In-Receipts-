@@ -1,0 +1,13 @@
+{
+  "name": "receipt-room",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A frontend-only interactive story built from digital life receipts.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
