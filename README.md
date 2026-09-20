@@ -12,6 +12,8 @@ python -m http.server 4173
 
 Open `http://localhost:4173/` in a browser.
 
+The repository also includes a GitHub Pages workflow. After the first successful workflow run, the static site is available at `https://melvinth14.github.io/-Your-Life-In-Receipts-/`.
+
 ## Experience
 
 - Search across merchants, songs, places, and categories.
