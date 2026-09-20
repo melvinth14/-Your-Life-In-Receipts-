@@ -15,6 +15,7 @@
   <div class="shell">
     <header class="topbar">
       <a class="brand" href="#top"><span class="brand-mark">RR</span><span>Receipt Room</span></a>
+      <nav class="site-nav" aria-label="Primary navigation"><a href="#insights">Insights</a><a href="#connections">Connections</a><a href="#explore">Archive</a></nav>
       <div class="topbar-meta"><span class="status-dot"></span><span id="dataStatus">loading your archive</span><span class="divider"></span><span>private collection / 2013-2024</span></div>
     </header>
 
@@ -36,11 +37,16 @@
         <article class="metric"><span class="metric-label">Favourite place</span><strong id="topPlace">—</strong><span>most repeated location</span></article>
       </section>
 
+      <section class="connections" id="connections" aria-labelledby="connections-title">
+        <div class="section-heading"><div><p class="kicker">The hidden connective tissue</p><h2 id="connections-title">Nothing happened alone.</h2></div><p class="section-note">A life is not a list. Select a node to follow the relationship between the things that kept appearing together.</p></div>
+        <div class="connection-layout"><div class="connection-map" id="connectionMap" role="img" aria-label="Interactive map of connections between receipt types"><div class="map-loading">Building the constellation...</div></div><aside class="connection-legend"><span class="eyebrow">Read the map</span><h3 id="connectionTitle">Four ways of being there.</h3><p id="connectionCopy">Music, money, places, and late hours overlap into a life that is more textured than any single receipt.</p><div class="connection-stat"><strong id="connectionCount">—</strong><span>crossed signals found</span></div><button class="button button-dark" id="connectionAction">Explore the thread <span>→</span></button></aside></div>
+      </section>
+
       <section class="explore" id="explore">
         <div class="section-heading"><div><p class="kicker">The archive</p><h2>Find the thread.</h2></div><p class="section-note">Search across the moments, then change the lens. Every result is a clue in a larger story.</p></div>
         <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search a song, place, merchant..." aria-label="Search receipts"></label><div class="filter-group" id="filterGroup"><button class="filter active" data-filter="all">All <b id="allCount">0</b></button><button class="filter" data-filter="music">Music</button><button class="filter" data-filter="money">Money</button><button class="filter" data-filter="places">Places</button></div><select id="sortSelect" aria-label="Sort receipts"><option value="new">Newest first</option><option value="old">Oldest first</option></select></div>
-        <div class="archive-layout"><div class="receipt-list" id="receiptList" aria-live="polite"></div><aside class="thread-panel" aria-live="polite"><div class="panel-top"><span class="eyebrow">One possible story</span><button id="closeThread" class="close-button" aria-label="Close thread">×</button></div><h3 id="threadTitle">The late-night<br><em>blue hour.</em></h3><p id="threadCopy">Some patterns only show up when the day has gone quiet.</p><div class="thread-line" id="threadLine"></div><div class="thread-foot"><span id="threadMeta">Select a receipt to follow its thread.</span><button class="circle-button" id="threadButton" aria-label="Follow thread">↗</button></div></aside></div>
-        <div class="empty-state" id="emptyState">No receipt matches that search. Try a broader word.</div>
+        <div class="archive-layout"><div class="receipt-list" id="receiptList" aria-live="polite"><div class="loading-state" role="status">Reading the small clues...</div></div><aside class="thread-panel" aria-live="polite"><div class="panel-top"><span class="eyebrow">One possible story</span><button id="closeThread" class="close-button" aria-label="Close thread">×</button></div><h3 id="threadTitle">The late-night<br><em>blue hour.</em></h3><p id="threadCopy">Some patterns only show up when the day has gone quiet.</p><div class="thread-line" id="threadLine"></div><div class="thread-foot"><span id="threadMeta">Select a receipt to follow its thread.</span><button class="circle-button" id="threadButton" aria-label="Follow thread">↗</button></div></aside></div>
+        <div class="empty-state" id="emptyState" role="status">No receipt matches that search. Try a broader word.</div>
       </section>
 
       <section class="chapters"><div class="section-heading"><div><p class="kicker">Zooming out</p><h2>Chapters, not a timeline.</h2></div><p class="section-note">The archive becomes more human when moments are read in company. These chapters are built from recurring categories, places, and time of day.</p></div><div class="chapter-grid" id="chapterGrid"></div></section>
